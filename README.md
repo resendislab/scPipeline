@@ -1,7 +1,3 @@
 # Bicycle-Gummy
-This is my firts comment
 
-sdjbfv}
-kjvxjkvb
-ljvnxcljkbv
-ldjvnvjkcb
+This pipeline was developed by ## in the [Human Systems Biology Group](https://resendislab.github.io/)
