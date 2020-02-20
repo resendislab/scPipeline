@@ -21,4 +21,4 @@ The data used and discussed have been deposited in NCBI's Gene Expression Omnibu
 ### knee filter
 Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold. 
 
-![Knee filter](https://github.com/Aaron-Vazquez/Bicycle-Gummy/images/Knee_plot_ 6B _ 1 .png)
+![Knee filter](https://github.com/Aaron-Vazquez/Bicycle-Gummy/images/Knee_plot.png)
