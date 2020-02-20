@@ -19,6 +19,10 @@ A count matrix is generated for every of the 4 lines. All files can be merged in
 The data used and discussed have been deposited in NCBI's Gene Expression Omnibus and are accessible through the accession number [GSE145633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145633).
 
 ### knee filter
-Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold. 
+Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold.  
 
-![Knee filter](https://github.com/Aaron-Vazquez/Bicycle-Gummy/tree/master/images/Knee_plot.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60892768/74989579-6177ce80-5406-11ea-8e20-866bc38cdefd.png">
+</p>
+
+As outoput file, the count matrix of cells leftward of the threshold is saved. 
