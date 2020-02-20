@@ -25,4 +25,9 @@ Since we used droplet based tecnology for the hight throuput sequencing, data mu
   <img src="https://user-images.githubusercontent.com/60892768/74989579-6177ce80-5406-11ea-8e20-866bc38cdefd.png">
 </p>
 
-As outoput file, the count matrix of cells leftward of the threshold is saved. 
+As outoput file, the count matrix of cells leftward of the threshold is saved. All samples are saved into one big matrix
+
+### Gene Over-dispersion
+Instead of using all genes into the analysis, we selected the most informative ones. To do so, firts taking hand of ![SCDE error models](https://hms-dbmi.github.io/scde/index.html) we got a matrix where overdispersion is computed of every gene and every sample. 
+The basic concept is if a gene is affected by a process or condiiotn it will be reflected in their variance. A non affected gene will have the same value across the sample. 
+
