@@ -75,5 +75,13 @@ As a result of clustering methods, Data is re-gropued with their respective clus
 ## Enrichment Analysis
 Since enrichment analysis performed by [GSEA tool](https://www.gsea-msigdb.org/gsea/index.jsp) can be done comparing every cluster with the rest of them, only one file is needed containing all clusters data. Moreover, there is a need to convert the count matrix into a specific formatted files according [GSEA file formats](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats).
 
+### Interaction Map
+As a result from gsea analysis, we got the enriched pathways according the expression profile. A filter is needed to keep those pathways with statistical relevance (FDR ≤ 0.05 and a p-value ≤ 0.01). The passing filter pathways were used to build an interaction map to give insigth about general processes. This map was computed using Cytoscape **Enrichment Map** app. Final map was refined with custom algorithms. For example, Jak Stat Group is conformed for several enriched pathways that has shared genes.
 
+<p align="center">
+  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75078790-3bb4fd00-54cc-11ea-8501-86410c7cb78e.png">
+ </p>
+
+
+## Differential
 Otherwise, differential gene expression analysis is done by pairs, so, one file is cerated per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations)
