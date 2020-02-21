@@ -4,17 +4,17 @@
 
 # Single Cell Pipeline
 
-* [Sample Processing](pipeline.md#samples\processing)
-  - [Data Availabity](Pipeline/pipeline.md#samples\data\availability)
-* [Knee filter](Pipeline/pipeline.md#knee\filter)
-* [Gene Over-dispersion](Pipeline/pipeline.md#gene\over-disperssion)
-* [Gene number selection](Pipeline/pipeline.md#gene\number\selection)
-* [Dimensionality Reduction](Pipeline/pipeline.md#Dimensionality\Reduction)
-* [Clustering](Pipeline/pipeline.md#Clustering)
-  - [Kmeans](Pipeline/pipeline.md#kmeans)
-  - [EM](Pipeline/pipeline.md#expectation-maxinization-algorithm)
-* [Enrichment Analysis](Pipeline/pipeline.md#Enrichment\Analysis)
-  - [Interaction Map](Pipeline/pipeline.md#Interaction\Map)
+* [Sample Processing](#samples-processing)
+  - [Data Availabity](#samples-data-availability)
+* [Knee filter](#knee-filter)
+* [Gene Over-dispersion](#gene-over-disperssion)
+* [Gene number selection](#gene-number-selection)
+* [Dimensionality Reduction](#Dimensionality-Reduction)
+* [Clustering](#Clustering)
+  - [Kmeans](#kmeans)
+  - [EM](#expectation-maxinization-algorithm)
+* [Enrichment Analysis](#Enrichment-Analysis)
+  - [Interaction Map](#Interaction-Map)
 
 
 ## Samples Processing
