@@ -45,15 +45,28 @@ Overdispersion matrix for all data is saved in csv file
 The number of genes used for further analysis has a relevant consiedration. If only the genes with greater variance (in the magnitude order of hundreds) gene expression analysis and pathway enrichment will give information about most significant proccesse. However, you will be discarting subtle proceeses with relevant information about the phenomena. Therefore, we propossed to discard the genes with a varition less than 15% of the total dynamic range.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/60892768/74992683-7193ac00-540e-11ea-948d-91af7130f1b1.png">
+  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/74992683-7193ac00-540e-11ea-948d-91af7130f1b1.png">
 </p>
 
 ### Dimensionality Reduction
-Since every data is in a multidimensionality space it is hard to associate similar characteristics among data. Therefore, a dimension reduction is a proper analysis to viasualize data properties in a bi-dimension space. Particularly for our data set, uMAP method works better due its objetive function definition.
+Since every data is in a multidimensionality space it is hard to associate similar characteristics among data. Therefore, a dimension reduction is a proper analysis to viasualize data properties in a bi-dimension space. Particularly for our data set, uMAP method works better due its objetive function definition (R pacakage **umap**). 
 
 ### Clustering
-Instead of compared data according the sample label, we mixed all data and performed clustering methods to re-group data by similarities in their gene expression profile. Two clustring methods to validate results and reduce possible bias induced for each one of them. 
+Instead of compared data according the sample labels, we mixed all data and performed clustering methods to re-group data by similarities in their gene expression profile. Two clustring methods were used to validate results and reduce possible unduced bias for each one of them.
 
+Clustering was performed in two spaces. Firstly, in the uMAP bidimensional space. and secondly, in the multidimensional space of the distance of every cell giveng the variance. This was done to evaluate the anlaysis robustness and set possible considerations.
 
 #### Kmeans
-It is a supervised method based
+It is a supervised method based on distance of a centroid to the data, for kmeans implementation the number of cluster must be predefined. To select 
+
+Kmeans method was implemented by R package **kmeans**, a multiple values for the number of groups was selectec, from 2 to 18. In each one, Sum of Squared estimate of Errors (SSE) was computed. So, the optimal clusters number was assigned when the elbow plot indicates the maximun change in SSE. This was done by computing the second derivative of SSE to find the optimal point.
+
+<p align="center">
+  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75059691-1eb80400-54a3-11ea-85b0-deb5973e2a44.png">
+</p>
+
+The projection of both inputs spaces clustered by kmeans are as follows. As can be seen, despite cluster asignation, uMAP input space has a more refined asignation. This consideration must be taken carefully, since multidimensional space clustering was not performed in a the uMAP space but it is plotted in the uMAP space.
+
+<p align="center">
+  <img width="900" height="450" src="https://user-images.githubusercontent.com/60892768/75060545-a2bebb80-54a4-11ea-9f04-5d9a5c28a42c.png">
+</p>
