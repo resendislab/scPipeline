@@ -16,6 +16,7 @@
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
 * [Differential Gene Expresion Analysis](#Differential-Gene-Expresion-Analysis)
+  - [Statistics](#Statistics)
 
 ## Samples Processing
 
@@ -96,6 +97,8 @@ As a result from gsea analysis, we got the enriched pathways according the expre
   <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75078790-3bb4fd00-54cc-11ea-8501-86410c7cb78e.png">
  </p>
 
-
 ## Differential Gene Expresion Analysis
-Otherwise, differential gene expression analysis is done by pairs, so, one file is cerated per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations)
+Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) with biological data.
+
+### Statistics
+
