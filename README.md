@@ -24,3 +24,6 @@ The complete pipeline starts with the fastq files. It ends with the files relate
   - [EM](pipeline.md#expectation-maxinization-algorithm)
 * [Enrichment Analysis](Pipeline/pipeline.md#Enrichment\Analysis)
   - [Interaction Map](Pipeline/pipeline.md#Interaction\Map)
+* [Differential Gene Expresion Analysis](Pipeline/pipeline.md#Differential\Gene\Expresion\Analysis)
+- [Statistics](Pipeline/pipeline.md#Statistics)
+
