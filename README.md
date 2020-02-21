@@ -15,4 +15,4 @@ The complete pipeline starts with the fastq files. It ends with the files relate
 
 [pipeline](Pipeline/pipeline.md)
 
-[Sample prcessing](Pipeline/pipeline.md#samples processing)
+[Sample](Pipeline/pipeline.md#samples\processing)
