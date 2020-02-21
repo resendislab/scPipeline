@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60892768/74993425-88d39900-5410-11ea-8643-b701551d0472.png">
+</p>
+
 # Bicycle-Gummy
 
 The pipeline described was developed by Aarón Vázquez-Jiménez in the [Human Systems Biology Group](https://resendislab.github.io/) at INMEGEN.
@@ -29,9 +33,16 @@ As outoput file, the count matrix of cells leftward of the threshold is saved. A
 
 ### Gene Over-dispersion
 Instead of using all genes into the analysis, we selected the most informative ones. To do so, firts taking hand of ![SCDE error models](https://hms-dbmi.github.io/scde/index.html) we got a matrix where overdispersion is computed of every gene and every sample. 
-The basic concept is if a gene is affected by a process or condiiotn it will be reflected in their variance. A non affected gene will have the same value across the sample. An example is shown below.
+The basic concept is if a gene is affected by a process or condiiotn it will be reflected in their variance. A non affected gene will have the same value across data. An example is shown below.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60892768/74991777-98e97980-540c-11ea-90ca-a90fe7ff38e1.png">
 </p>
 
+Overdispersion matrix for all data is saved in .csv file
+
+### Gene number selection
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60892768/74992683-7193ac00-540e-11ea-948d-91af7130f1b1.png">
+</p>
