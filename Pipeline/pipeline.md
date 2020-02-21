@@ -4,6 +4,8 @@
 
 # Single Cell Pipeline
 
+The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the ointeraction maps accordinfd pathway enrichment. The full pipeline is formed by the following modules:
+
 * [Sample Processing](#samples-processing)
   - [Data Availabity](#samples-data-availability)
 * [Knee filter](#knee-filter)
@@ -101,4 +103,4 @@ As a result from gsea analysis, we got the enriched pathways according the expre
 Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) with biological data.
 
 ### Statistics
-
+For every comparisson 
