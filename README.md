@@ -11,9 +11,7 @@ This pipeline was used to study functionally heterogeneity in the MCF7 cell line
 
 ## Getting Started
 
-The complete pipeline starts with the fastq files. It ends with the files related to the differential gene expression analysis and the ones necceary to use the GSEA tool. The pipeline is formed by the following steps:
-
-[pipeline](Pipeline/pipeline.md)
+The complete pipeline starts with the fastq files. It ends with the files related to the differential gene expression analysis and the ones necceary to use the GSEA tool. The complete [pipeline](Pipeline/pipeline.md) is formed by the following steps:
 
 * [Sample Processing](Pipeline/pipeline.md#samples\processing)
   - [Data Availabity](Pipeline/pipeline.md#samples\data\availability)
@@ -24,3 +22,4 @@ The complete pipeline starts with the fastq files. It ends with the files relate
 * [Clustering](Pipeline/pipeline.md#Clustering)
   - [Kmeans](Pipeline/pipeline.md#kmeans)
   - [EM](Pipeline/pipeline.md#expectation-maxinization-algorithm)
+* [Enrichment Analysis](Pipeline/pipeline.md#Enrichment\Analysis)
