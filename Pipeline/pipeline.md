@@ -15,7 +15,7 @@
   - [EM](#expectation-maxinization-algorithm)
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
-
+* [Differential Gene Expresion Analysis](#Differential-Expresion-Analysis)
 
 ## Samples Processing
 
@@ -24,7 +24,7 @@ Raw files were processed througth ddSeeker pipeline ([Rogmanoli et al. 2018](htt
 A count matrix is generated for every of the 4 lines. All files can be merged into one.
 
 ### Data Availabity 
-The data used and discussed have been deposited in NCBI's Gene Expression Omnibus and are accessible through the accession number [GSE145633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145633).
+The data used and discussed have been deposited in NCBI's Gene Expression Omnibus and are accessible through the accession number [GSE145633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145633). 
 
 ## knee filter
 Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold.  
@@ -97,5 +97,5 @@ As a result from gsea analysis, we got the enriched pathways according the expre
  </p>
 
 
-## Differential
+## Differential Gene Expresion Analysis
 Otherwise, differential gene expression analysis is done by pairs, so, one file is cerated per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations)
