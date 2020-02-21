@@ -39,10 +39,14 @@ The basic concept is if a gene is affected by a process or condiiotn it will be 
   <img src="https://user-images.githubusercontent.com/60892768/74991777-98e97980-540c-11ea-90ca-a90fe7ff38e1.png">
 </p>
 
-Overdispersion matrix for all data is saved in .csv file
+Overdispersion matrix for all data is saved in csv file
 
 ### Gene number selection
+The number of genes used for further analysis has a relevant consiedration. If only the genes with greater variance (in the magnitude order of hundreds) gene expression analysis and pathway enrichment will give information about most significant proccesse. However, you will be discarting subtle proceeses with relevant information about the phenomena. Therefore, we propossed to discard the genes with a varition less than 15% of the total dynamic range.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60892768/74992683-7193ac00-540e-11ea-948d-91af7130f1b1.png">
 </p>
+
+### Clustering
+Instead of compared data according the sample label, we mixed all data and performed clustering methods to re-group data by similarities in their gene expression despite the time sample. 
