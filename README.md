@@ -31,3 +31,7 @@ As outoput file, the count matrix of cells leftward of the threshold is saved. A
 Instead of using all genes into the analysis, we selected the most informative ones. To do so, firts taking hand of ![SCDE error models](https://hms-dbmi.github.io/scde/index.html) we got a matrix where overdispersion is computed of every gene and every sample. 
 The basic concept is if a gene is affected by a process or condiiotn it will be reflected in their variance. A non affected gene will have the same value across the sample. 
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60892768/74991638-1660ba00-540c-11ea-88bc-b885a0a025de.png">
+</p>
+
