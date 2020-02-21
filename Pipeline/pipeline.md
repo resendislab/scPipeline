@@ -15,7 +15,7 @@
   - [EM](#expectation-maxinization-algorithm)
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
-* [Differential Gene Expresion Analysis](#Differential-Expresion-Analysis)
+* [Differential Gene Expresion Analysis](#Differential-Gene-Expresion-Analysis)
 
 ## Samples Processing
 
