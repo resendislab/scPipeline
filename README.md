@@ -59,14 +59,23 @@ Clustering was performed in two spaces. Firstly, in the uMAP bidimensional space
 #### Kmeans
 It is a supervised method based on distance of a centroid to the data, for kmeans implementation the number of cluster must be predefined. To select 
 
-Kmeans method was implemented by R package **kmeans**, a multiple values for the number of groups was selectec, from 2 to 18. In each one, Sum of Squared estimate of Errors (SSE) was computed. So, the optimal clusters number was assigned when the elbow plot indicates the maximun change in SSE. This was done by computing the second derivative of SSE to find the optimal point.
+Kmeans method was implemented through the R package **kmeans**, a multiple values for the number of groups was selectec, from 2 to 18. In each one, Sum of Squared estimate of Errors (SSE) was computed. So, the optimal clusters number was assigned when the elbow plot indicates the maximun change in SSE. This was done by computing the second derivative of SSE to find the optimal point.
 
 <p align="center">
   <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75059691-1eb80400-54a3-11ea-85b0-deb5973e2a44.png">
 </p>
 
-The projection of both inputs spaces clustered by kmeans are as follows. As can be seen, despite cluster asignation, uMAP input space has a more refined asignation. This consideration must be taken carefully, since multidimensional space clustering was not performed in a the uMAP space but it is plotted in the uMAP space.
+The projection of both inputs spaces clustered by kmeans are as follows. As can be seen, despite cluster asignation, uMAP input space has a more refined asignation. This consideration must be taken carefully,because multidimensional space clustering was not performed in the uMAP space but it is plotted in the uMAP space.
 
 <p align="center">
   <img width="900" height="450" src="https://user-images.githubusercontent.com/60892768/75061267-fe3d7900-54a5-11ea-9651-d80937df830a.png">
+</p>
+
+#### Expectation-Maximization Algorithm
+Expectation-Maximization Algorithm is non supervised method, that computes the maximun likelihood of the propbability distribution, 
+
+EM algortihm was impleted through the R package **mclust**. mclust gives you the optimal clusters number by computing the associated error.
+
+<p align="center">
+  <img width="500" height="450" src="https://user-images.githubusercontent.com/60892768/75064692-0947d780-54ad-11ea-9542-d76210a13f57.png">
 </p>
