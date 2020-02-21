@@ -48,5 +48,12 @@ The number of genes used for further analysis has a relevant consiedration. If o
   <img src="https://user-images.githubusercontent.com/60892768/74992683-7193ac00-540e-11ea-948d-91af7130f1b1.png">
 </p>
 
+### Dimensionality Reduction
+Since every data is in a multidimensionality space it is hard to associate similar characteristics among data. Therefore, a dimension reduction is a proper analysis to viasualize data properties in a bi-dimension space. Particularly for our data set, uMAP method works better due its objetive function definition.
+
 ### Clustering
-Instead of compared data according the sample label, we mixed all data and performed clustering methods to re-group data by similarities in their gene expression despite the time sample. 
+Instead of compared data according the sample label, we mixed all data and performed clustering methods to re-group data by similarities in their gene expression profile. Two clustring methods to validate results and reduce possible bias induced for each one of them. 
+
+
+#### Kmeans
+It is a supervised method based
