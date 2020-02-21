@@ -21,5 +21,6 @@ The complete pipeline starts with the fastq files. It ends with the files relate
 * [Dimensionality Reduction](Pipeline/pipeline.md#Dimensionality\Reduction)
 * [Clustering](Pipeline/pipeline.md#Clustering)
   - [Kmeans](Pipeline/pipeline.md#kmeans)
-  - [EM](Pipeline/pipeline.md#expectation-maxinization-algorithm)
+  - [EM](pipeline.md#expectation-maxinization-algorithm)
 * [Enrichment Analysis](Pipeline/pipeline.md#Enrichment\Analysis)
+  - [Interaction Map](Pipeline/pipeline.md#Interaction\Map)
