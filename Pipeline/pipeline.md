@@ -70,6 +70,10 @@ EM algortihm was impleted through the R package **mclust**. mclust gives you the
   <img width="500" height="450" src="https://user-images.githubusercontent.com/60892768/75064692-0947d780-54ad-11ea-9542-d76210a13f57.png">
 </p>
 
-As a result of clustering methods, Data is re-gropued with their respective cluster assignation in a csv file where columns sets for cluster name with the number of sample and rows sets for the selected genes.
+As a result of clustering methods, Data is re-gropued with their respective cluster assignation in a csv file where columns sets for cluster name with the number of sample and rows sets for the selected genes. 
 
-Since 
+## Enrichment Analysis
+Since enrichment analysis performed by [GSEA tool](https://www.gsea-msigdb.org/gsea/index.jsp) can be done comparing every cluster with the rest of them, only one file is needed containing all clusters data. Moreover, there is a need to convert the count matrix into a specific formatted files according [GSEA file formats](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats).
+
+
+Otherwise, differential gene expression analysis is done by pairs, so, one file is cerated per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations)
