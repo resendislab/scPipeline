@@ -68,5 +68,5 @@ Kmeans method was implemented by R package **kmeans**, a multiple values for the
 The projection of both inputs spaces clustered by kmeans are as follows. As can be seen, despite cluster asignation, uMAP input space has a more refined asignation. This consideration must be taken carefully, since multidimensional space clustering was not performed in a the uMAP space but it is plotted in the uMAP space.
 
 <p align="center">
-  <img width="900" height="450" src="https://user-images.githubusercontent.com/60892768/75060545-a2bebb80-54a4-11ea-9f04-5d9a5c28a42c.png">
+  <img width="900" height="450" src="https://user-images.githubusercontent.com/60892768/75061267-fe3d7900-54a5-11ea-9651-d80937df830a.png">
 </p>
