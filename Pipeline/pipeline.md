@@ -18,7 +18,7 @@ The complete pipeline starts with the fastq files and ends with the differential
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
 * [Differential Gene Expresion Analysis](#Differential-Gene-Expresion-Analysis)
-  -[Genetic Signatures](#Genetic-signatures)
+  - [Genetic Signatures](#Genetic-signatures)
 
 ## Samples Processing
 
