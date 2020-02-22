@@ -18,7 +18,6 @@ The complete pipeline starts with the fastq files and ends with the differential
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
 * [Differential Gene Expresion Analysis](#Differential-Gene-Expresion-Analysis)
-  - [Statistics](#Statistics)
 
 ## Samples Processing
 
@@ -102,5 +101,13 @@ As a result from gsea analysis, we got the enriched pathways according the expre
 ## Differential Gene Expresion Analysis
 Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) with biological data.
 
-### Statistics
-For every comparisson 
+Differentially expresed genes were settled with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01.
+<p align="center">
+  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
+ </p>
+
+<p align="center">
+  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082905-8ab65e80-54db-11ea-9365-2e7bd3da90dc.png">
+ </p>
+
+
