@@ -26,4 +26,5 @@ The complete pipeline starts with the fastq files. It ends with the files relate
   - [Interaction Map](Pipeline/pipeline.md#Interaction\Map)
 * [Differential Gene Expresion Analysis](Pipeline/pipeline.md#Differential\Gene\Expresion\Analysis)
   - [Statistics](Pipeline/pipeline.md#Statistics)
+  - [Genetic signatures](Pipeline/pipeline.md#Genetic\signatures)
 
