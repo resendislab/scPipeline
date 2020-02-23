@@ -78,7 +78,7 @@ The projection of both inputs spaces clustered by kmeans are as follows. As can 
   <img width="900" height="450" src="https://user-images.githubusercontent.com/60892768/75061267-fe3d7900-54a5-11ea-9651-d80937df830a.png">
 </p>
 
-### Expectation-Maximization Algorithm
+### Expectation Maximization Algorithm
 Expectation-Maximization Algorithm is non supervised method, that computes the maximun likelihood of the propbability distribution, 
 
 EM algortihm was impleted through the R package **mclust**. mclust gives you the optimal clusters number by computing the associated error. EM was used with the two input as kmeans. An example is presented below, as can be seen EM fractures the space into more gruops, however as furter disscused, the re is no difference between analysis. An important consideration is that based on the sample size, fewer gruops are better becasuse is easier to be associated with a paticular process. 
