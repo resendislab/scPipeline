@@ -14,7 +14,7 @@ The complete pipeline starts with the fastq files and ends with the differential
 * [Dimensionality Reduction](#Dimensionality-Reduction)
 * [Clustering](#Clustering)
   - [Kmeans](#kmeans)
-  - [EM](#expectation-maxinization-algorithm)
+  - [EM](#expectation-maximization-algorithm)
 * [Enrichment Analysis](#Enrichment-Analysis)
   - [Interaction Map](#Interaction-Map)
 * [Differential Gene Expresion Analysis](#Differential-Gene-Expresion-Analysis)
