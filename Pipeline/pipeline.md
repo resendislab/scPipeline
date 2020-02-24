@@ -4,7 +4,7 @@
 
 # Single Cell Pipeline
 
-The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the ointeraction maps accordinfd pathway enrichment. The full pipeline is formed by the following modules:
+The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the interaction maps according pathway enrichment. The full pipeline is formed by the following modules:
 
 * [Sample Processing](#samples-processing)
   - [Data Availabity](#samples-data-availability)
