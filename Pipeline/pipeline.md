@@ -4,7 +4,7 @@
 
 # Single Cell Pipeline
 
-The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the complete pipeline as R code,  which it is formed by the following modules:
+The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the complete pipeline as R code, which it is formed by the following modules:
 
 * [Sample Processing](#samples-processing)
   - [Data Availabity](#samples-data-availability)
@@ -100,13 +100,15 @@ As a result from gsea analysis, we got the enriched pathways according the expre
  </p>
 
 ## Differential Gene Expresion Analysis
-Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) with biological data.
+Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) from biological data.
 
 ### Genetic Signatures
 
-Differentially expresed genes were settled with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01.
+We selected the 
+Differentially expresed genes were selected with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01. So, there is a list of differentially expressed genes for each comparison. To get globally expresed genes for each cluster, we constructed a intersection lists, they contained genes that are overexpresed in all comparasissons related to an especific cluster. For example, a gene **GeneX** either must be overexpresed for Cluster A in AvsB and AvsC comparissons to be selected as global(in the case of 3 clusters). This procces can represented as a re-estructuration of a Venn diagram as shown bellow.
+
 <p align="center">
-  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
+  <img width=900" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
  </p>
 
 <p align="center">
