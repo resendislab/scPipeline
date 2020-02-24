@@ -1,8 +1,8 @@
-#### This script find the differentially expresed through Karchenko et al. 
-#### 2014 framework. Therefore, SCDE R package is used. Differential gene Expresion 
-#### analysis is done by pairs considering all posible combinations. 
+#### This script find the differentially expressed through Kharchenko et al.
+#### 2014 framework. Therefore, SCDE R package is used. Differential gene Expression
+#### analysis is done by pairs considering all possible combinations.
 #### If there is three Cluster (A,B,C) for example,
-#### three analises are performed and so on: AvsB, AvsC and BvsC.
+#### three analyses are performed and so on: AvsB, AvsC and BvsC.
 
 ### Clean memory
 rm(list = ls())
@@ -22,7 +22,7 @@ fls.name <- c("kmeans_Class_uMAP",
 id.val <- 1
 fl <- 0
 ng <- length(val)
-##### This loop is usefull when its considered more than one genes number 
+##### This loop is useful when it's considered more than one genes number
 for (j in 1:(ng*4)){  
   id.fls <- (j-1)%/%ng+1
 ###  id.fls <- j
@@ -40,11 +40,11 @@ for (j in 1:(ng*4)){
                     sep = ",", row.names = 1)
 
   N.clust = max(Clust[,1])
-  ### Possible combinations of 2 elements given the cluster numbers 
+  ### Possible combinations of 2 elements given the cluster numbers
   comb <- combinations(N.clust, 2, LETTERS[1:N.clust],
                        set=TRUE, repeats.allowed=FALSE)
-  
- ### This loop specifically runs the DEA for every combitation 
+ 
+ ### This loop specifically runs the DEA for every combination
   for(i in 1:choose(N.clust,2)){
     #### file name
     f.name <- paste("./data/processed/Groups_",fls.name[id.fls],
@@ -52,7 +52,7 @@ for (j in 1:(ng*4)){
                     toString(val[id.val]),"_",
                     paste(comb[i,], collapse = "vs"),
                     ".csv",sep = "")
-    #### Load file 
+    #### Load file
     MyData <- read.csv(file = f.name,
                         header = TRUE, row.names = 1, sep = ";")
     
@@ -65,21 +65,21 @@ for (j in 1:(ng*4)){
     sg <- factor(gsub(a, "\\1", colnames(MyData)), levels = c(G1,G2))
     names(sg) <- colnames(MyData)  
     table(sg)
-    ## clean up the dataset, minimun of reads per sample= 1, minimun reads
-    ## per gene=1, mininum genes per sample = 1.
-    cd <- clean.counts(MyData, min.lib.size=1, min.reads = 1, 
+    ## clean up the dataset, minimum of reads per sample= 1, minimum reads
+    ## per gene=1, minimum genes per sample = 1.
+    cd <- clean.counts(MyData, min.lib.size=1, min.reads = 1,
                        min.detected = 1)
     ###Fitting error model
     ## calculate models
     #### CAUTION #####
     #### The limiting factor isn't the numbers of cores, It is the RAM
-    #### For this datasets, when used 2 cores the RAM demmanded is on
+    #### For this datasets, when used 2 cores the RAM demand is on
     #### average 28 GB.
     
-    o.ifm <- scde.error.models(counts = cd, groups = sg, n.cores = 2, 
-                               threshold.segmentation = TRUE, 
-                               save.crossfit.plots = FALSE, 
-                               save.model.plots = FALSE, 
+    o.ifm <- scde.error.models(counts = cd, groups = sg, n.cores = 2,
+                               threshold.segmentation = TRUE,
+                               save.crossfit.plots = FALSE,
+                               save.model.plots = FALSE,
                                verbose = 1)
     head(o.ifm)
     
@@ -89,7 +89,7 @@ for (j in 1:(ng*4)){
     table(valid.cells)
     o.ifm <- o.ifm[valid.cells, ]
     ## estimate gene expression prior
-    o.prior <- scde.expression.prior(models = o.ifm, counts = cd, 
+    o.prior <- scde.expression.prior(models = o.ifm, counts = cd,
                                      length.out = 400, show.plot = FALSE)
     
     ## define two groups of cells
@@ -97,16 +97,16 @@ for (j in 1:(ng*4)){
     names(groups) <- row.names(o.ifm)
     
     ## Run differential expression tests on all genes.
-    ediff <- scde.expression.difference(o.ifm, cd, o.prior, 
-                                        groups  =  groups, 
-                                        n.randomizations  =  100, 
+    ediff <- scde.expression.difference(o.ifm, cd, o.prior,
+                                        groups  =  groups,
+                                        n.randomizations  =  100,
                                         n.cores  =  5, verbose  =  1)
     
-    ## top upregulated genes (tail would show top downregulated ones)
+    ## top upregulated genes (tail would show top down regulated ones)
 #    head(ediff[order(ediff$Z, decreasing  =  TRUE), ])
     
 #    tail(ediff[order(ediff$Z, decreasing  =  TRUE), ])
-    ## table with all the results, showing most significantly different genes 
+    ## table with all the results, showing most significantly different genes
     ## (in both directions) on top
     base <- paste(fls.name[id.fls],"_",
                   toString(val[id.val]),sep = "")
@@ -118,3 +118,5 @@ for (j in 1:(ng*4)){
     ## scde.test.gene.expression.difference("TPX2", models = o.ifm, counts = cd, prior = o.prior)
   }
 }
+
+

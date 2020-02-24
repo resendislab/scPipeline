@@ -1,6 +1,6 @@
-##### This file gets the filterd differentially expresed genes (DEG) from every 
-##### cluster compared to rest of them, for example, given the Cluster A DEG 
-##### for AvsB and AvsC comparisson, it gets the intersected genes from both
+##### This scripts filters differentially expressed genes (DEG) from every
+##### cluster compared to rest of them, for example, given the Cluster A DEG
+##### for AvsB and AvsC comparison, it gets the intersected genes from both
 ##### analyses, therefore, the global DEG are obtained.
 
 ### Clean memory
@@ -16,11 +16,11 @@ Gns.Inter <- function (j,sp,logFC){
                           toString(logFC),sep = ""))
   ###### trim the list of file names for sp analysis
   fls = fls[str_detect(fls, sp)]
-  ##### Open all comparisson files for Cluster j
+  ##### Open all comparison files for Cluster j
   Dat <- lapply(fls, function(x) read.table(
     paste("./results/data/Diff_genes/",x,sep = ""),
     sep = "\t"))
-  
+ 
   n = length(fls)
   ##### Lists intersections
   A <- intersect(rownames(Dat[[1]]),rownames(Dat[[2]]))
@@ -30,8 +30,8 @@ Gns.Inter <- function (j,sp,logFC){
   }
   ##### saving file
   write.table(A,file = paste(path,"/Genes_",LETTERS[j],"_",
-                             sp,"_(LogFC_",toString(logFC),").txt",sep = ""), 
-              sep = "\t", col.names = FALSE, quote = FALSE, 
+                             sp,"_(LogFC_",toString(logFC),").txt",sep = ""),
+              sep = "\t", col.names = FALSE, quote = FALSE,
               row.names = FALSE)
 }
 #####################################
@@ -64,14 +64,14 @@ for (i in 1:(ng*4)){
   ### name of root analysis
   sp = paste(fls.name[id.fls],"_",
              toString(val[id.val]),sep = "")
-  
+ 
   print(paste("/Groups_",sp,".csv",sep ="" ))
   ###### Number of Clusters
   Clust <- read.csv(paste("./data/processed/",sp,".csv",sep ="" ),
                     sep = ",")
   N.clust = max(Clust[,2])
-  
-  ##### Gns.Inter computes the intersection from the DEG of every 
-  ##### comparisson
+ 
+  ##### Gns.Inter computes the intersection from the DEG of every
+  ##### comparison
   invisible(lapply(1:N.clust, function(x) Gns.Inter(x,sp,logFC)))
 }

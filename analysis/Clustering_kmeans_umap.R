@@ -1,11 +1,11 @@
 ###### This scripts computes kmeans cluster algorithm given two spaces as inputs:
 ######    1. Overdispersion multidimensional space
 ######    2. umap bidimensional space
-###### For every space the optinum number of groups is computed by calculating
-###### the SSE and taking the second derivative to get the most significative 
+###### For every space the optimum number of groups is computed by calculating
+###### the SSE and taking the second derivative to get the most significative
 ###### change in the SSE reduction
-###### Given the optinum number of groups, the asignation of every sample in
-###### each group is done. Also, proportions are ploted im two bar plots.
+###### Given the optimum number of groups, the assignation of every sample in
+###### each group is done. Also, proportions are plotted in two bar plots.
 rm(list=ls())
 source("./analysis/Funn.R")
 library(factoextra)
@@ -27,7 +27,7 @@ table(label)
 #### vectors to save SSE given kmeans algorithm
 sse_Var=matrix(data = 0,nrow = 17,ncol = 1)
 sse_umap=matrix(data = 0,nrow = 17,ncol = 1)
-  
+ 
 #### Variance sorted (Decreasing)
 rcmvar <- apply(Var, 1, var)
 ### Only the top ng genes are considered
@@ -37,16 +37,16 @@ Var.f <- Var[vi,]
 Var.Corr <-as.data.frame(cor(Var.f,method = "pearson"))
 ### Distance matrix
 Dis.R <- 1-Var.Corr
-#  ##### t-SNE computation for comparations purposes
+#  ##### t-SNE computation for comparison purposes
   #library(Rtsne)
   # set.seed(1)
   # tSNE <- Rtsne(Dis.R,is_distance=TRUE, perplexity=50,max_iter=5000,verbose=0)
   # plot(tSNE$Y, pch=19,col=as.integer(label))
   # title(paste("tSNE",toString(ng), sep = " "))
-  
+ 
 ### uMAP computation
 Data.umap = umap(Dis.R,random_state=1)
-  
+ 
 # uMAP space of data, colored by sample time
 plot(Data.umap$layout, pch=19, col=as.integer(label))
 title(paste("uMAP",toString(ng), sep = " "))
@@ -69,10 +69,10 @@ legend("bottomright",
       k=kmeans(Data.umap$layout, j, nstart = 25,iter.max = 100)
       sse_umap[j-1]=sum(k$withinss)
   }
-#### The function k.groups gets local maximun of the second derivative of SSE
+#### The function k.groups gets local maximum of the second derivative of SSE
 #### Also, it plots the SSE for different k values
 k.var <- k.groups(sse_Var,'Var_Space',ng)
-  
+ 
 k.umap <-k.groups(sse_umap,'uMAP_Space',ng)
 
 ###uMAP Space with the optimal group number
@@ -93,22 +93,22 @@ k.umap <-k.groups(sse_umap,'uMAP_Space',ng)
       write.csv(G2.col, file = paste("./data/processed/kmeans_Class_uMAP_",toString(ng[i]*100),
                                ".csv",sep = ""),
                  quote = FALSE, row.names = TRUE)
-#### Ploting clustering results into uMAP Space
+#### Plotting clustering results into uMAP Space
 MyplotScatter(ng,Data.umap$layout,G1.col,max(G1.col),
               G2.col,max(G2.col),"kmeans")
       
 ### Computing the proportion of every group
-prop.Var <- Proportion(k1$cluster, k.var, 
+prop.Var <- Proportion(k1$cluster, k.var,
                        rownames(as.data.frame(k1$cluster)))
       
-prop.uMAP <- Proportion(k2$cluster, k.umap, 
+prop.uMAP <- Proportion(k2$cluster, k.umap,
                         rownames(as.data.frame(k2$cluster)))
 
 
-### Ploting Proportions of cells in each group.
+### Plotting Proportions of cells in each group.
 ### Sample percentage plot tells you the proportion of the total sample
-### contained in every Cluster giveng the time
-### Groups percentage plot tells you the composition of every cluster 
-### giveng  the Cluster sample
+### contained in every Cluster
+### Groups percentage plot tells you the composition of every cluster
+### given  the Cluster sample
 MyplotBar(prop.Var,'Kmeans_Var',ng)
 MyplotBar(prop.uMAP,'Kmeans_uMAP',ng)

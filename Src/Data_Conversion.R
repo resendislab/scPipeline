@@ -1,7 +1,7 @@
-###### This script takes the Data output files and converte them into a data
+###### This script takes the Data output files and convert them into a data
 ###### frame with genes as rows and samples as columns. It is used for
-###### posterior analysis. The number 6 in labels marks for day sixth samples; 
-###### label 19 goes for day 19th samples. 
+###### posterior analysis. The number 6 in labels marks for day sixth samples;
+###### label 19 goes for day 19th samples.
 rm(list=ls())
 
 ###### Loading raw Data
@@ -35,7 +35,7 @@ names6<-unlist(lapply(1:n[2],FUN=function(x) paste("D6",x,sep="_")))
 colnames(Data.6) <- names6
 
 Gene.names <- c(rownames(Data.19A),rownames(Data.19B))
-Data.19 <- merge(Data.19B,Data.19A, by = "row.names", 
+Data.19 <- merge(Data.19B,Data.19A, by = "row.names",
                  all = TRUE, sort = FALSE)
 ### Matriz count filled with Zeros for non matching cases
 Data.19[is.na(Data.19)] <- 0
@@ -55,7 +55,7 @@ MyData[is.na(MyData)] <- 0
 Gene.names <- MyData$Row.names
 ####MyData <- MyData[,-1]
 
-##### Name convertion from hg19 to hg38
+##### Name conversion from hg19 to hg38
 ##### loading Names Function
 source("./src/Names_function.R")
 
@@ -64,8 +64,10 @@ MyData[,1] <- Names.hg19_hg38(as.vector(Gene.names))
 #### duplicated genes with equivalent names
 MyData1 <- Duplicated.Genes(MyData)
 
-##### Saving Data as cvs File
+##### Saving Data as csv File
 ##### MCTS goes for MultiCellular Tumor Spheroids
 write.csv2(MyData1, file="./data/processed/MCTS_b.csv",
            quote = FALSE)
 rm(Data.19,Data.6,names19,names6,n)
+
+

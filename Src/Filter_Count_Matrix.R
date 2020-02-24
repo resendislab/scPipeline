@@ -1,11 +1,7 @@
 #### Script to select and filter the  percentage 
 #### of valid cells based on the count matrix
 
-#rm(list = ls())
-#pth <- "./Documents/ScPipe/6B_samples/Output"
-
 Filter.Count.Matrix <- function(smp,b){
-  #### smp <- sample name
   pth <- "./data/raw/ddSeeker_Output"
   library(splus2R)
   library(sjmisc)
@@ -87,10 +83,7 @@ inflec <- function(Gns,smp,tit){
   Gns <- Gns[,Sm1]
   # ## Cells passing knee filter
   FCs <- Gns[,1:b]
-#  FCs <- Gns[,1:b[1,1]]
-#  rm(Gns,TOTAL,DF,c,df)
-  # 
-  
+
   write.table(FCs, file=paste("./data/raw/Filtered_Count_Matrix_",
                               smp,".csv",sep = ""),
               quote= FALSE, row.names = TRUE, col.names = TRUE, sep = ",")
@@ -98,7 +91,6 @@ inflec <- function(Gns,smp,tit){
 }
 
 Duplicated.Genes <- function(Gns){
-#  Gns <- MyData
   nms <- upperCase(Gns[,1])
   n <- dim(Gns)
   a <- nms[duplicated(nms)]

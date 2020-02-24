@@ -1,8 +1,8 @@
-###### This Script uses the clustering information to re-arange the data into
+###### This Script uses the clustering information to rearrange the data into
 ###### subgroups. It generates two kind of files: first file is a .csv
-###### containing count matrix of every Clusters, this file is used in the 
-###### GSEA software. The second one is the files considering the multiple 
-###### comparisson by pairs; it's used in the Differentially Gene Expression
+###### containing count matrix of every Clusters, this file is used in the
+###### GSEA software. The second one is the files considering the multiple
+###### comparison by pairs; it's used in the Differentially Gene Expression
 ###### Analysis.
 rm(list=ls())
 require(cluster)
@@ -23,7 +23,7 @@ Grp.Assigment.ALL <- function (Clust,N.clust,MyData2,Gnames){
     j <- j+1
   }
   return(SubData)
-} 
+}
 Grp.Assigment.Pairs <- function (path,N.clust, MyData2,Gnames,fls,ng){
   ## Possible combinations of two elements
   comb <- combinations(N.clust, 2, 1:N.clust,
@@ -38,7 +38,7 @@ Grp.Assigment.Pairs <- function (path,N.clust, MyData2,Gnames,fls,ng){
     SubData <- merge(SubData1,SubData2, by = "row.names", sort = FALSE)
     SubData <- SubData[,-1]
     rownames(SubData) <- Gnames
-    ##### Write comparation matrix by pairs
+    ##### Write comparison matrix by pairs
     write.csv2(SubData, file=paste(path,'/',fls,"_",
                                    toString(ng),"_",
                                    LETTERS[comb[j,1]],"vs",
@@ -50,12 +50,12 @@ Grp.Assigment.Pairs <- function (path,N.clust, MyData2,Gnames,fls,ng){
 }
 
 Ext.Data <- function(Clust,j,MyData2){
-  ## Indexes where sample correpond to Cluster j
+  ## Indexes where sample correspond to Cluster j
   b <- which(Clust[,1] %in% j)
   ## Count matrix for only Cluster j
   SubData1 <- MyData2[,b]
   n <- dim(SubData1)
-  ## Name assigment to Group j
+  ## Name assignment to Group j
   nms<-unlist(lapply(1:n[2],FUN=function(x) paste("Grp",LETTERS[j]
                                                   ,x,sep="_")))
   colnames(SubData1) <- nms
@@ -89,7 +89,7 @@ fl <- 1
 id.val <- 0
 ####Load Data
 for (i in 1:length(fls)){
-## Saving path 
+## Saving path
   path <- paste('./data/processed/Groups_',fls[i],sep="")
   print(path)
   if (dir.exists(path)==FALSE){dir.create(path)}
@@ -98,10 +98,10 @@ for (i in 1:length(fls)){
                           ".csv",sep ="" ),sep = ",", row.names = 1)
 ## Getting the number of clusters
   N.clust = max(Clust[,1])
-## Grp.Assigment function re-arange Count Matrix acording to the clusterins
+## Grp.Assigment function rearrange Count Matrix according to the clustering
 ## output
  SubData <- Grp.Assigment.ALL(Clust,N.clust,MyData2,Gnames)
-#### File with All Groups 
+#### File with All Groups
   write.csv2(SubData, file=paste(path,'/',fls[i],'_',
                                  toString(ng),"_",
                                  paste(LETTERS[1:N.clust], collapse = "vs")
