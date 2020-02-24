@@ -29,7 +29,7 @@ A count matrix is generated for every of the 4 lines. All files can be merged in
 ### Data Availabity 
 The data used and discussed have been deposited in NCBI's Gene Expression Omnibus and are accessible through the accession number [GSE145633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145633). 
 
-## knee filter
+## Knee filter
 Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold.  
 
 <p align="center">
