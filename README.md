@@ -6,8 +6,6 @@
 
 The pipeline described was developed by Aarón Vázquez-Jiménez in the [Human Systems Biology Group](https://resendislab.github.io/) at INMEGEN.
 
-In [Pipeline.R](pipeline.R) is expresed tue complete pipeline as a R code.
-
 ## Atributtion
 This pipeline was used to study functionally heterogeneity in the MCF7 cell line using Multicelluas Tumor Spheroids as tumor model. If you have any questions contact us at avazquezj(at)inmegen.gob.mx and oresendis (at) inmegen.gob.mx. 
 
