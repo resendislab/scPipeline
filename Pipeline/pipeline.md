@@ -108,7 +108,7 @@ We selected the
 Differentially expresed genes were selected with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01. So, there is a list of differentially expressed genes for each comparison. To get globally expresed genes for each cluster, we constructed a intersection lists, they contained genes that are overexpresed in all comparasissons related to an especific cluster. For example, a gene **GeneX** either must be overexpresed for Cluster A in AvsB and AvsC comparissons to be selected as global(in the case of 3 clusters). This procces can represented as a re-estructuration of a Venn diagram as shown bellow.
 
 <p align="center">
-  <img width=900" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
+  <img width=900" height="450" src="https://user-images.githubusercontent.com/60892768/75173471-8ca73a00-56f4-11ea-9a60-4142bcda8bfe.png">
  </p>
 
 Finally, globally differentially expresed genes are visualizated in a expression heatmap. Upper bar represents Clusters. 
