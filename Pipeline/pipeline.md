@@ -111,6 +111,8 @@ Differentially expresed genes were selected with a threshold of |Log<sub>2</sub>
   <img width=900" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
  </p>
 
+Finally, globally differentially expresed genes are visualizated in a expression heatmap. Upper bar represents Clusters. 
+
 <p align="center">
   <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082905-8ab65e80-54db-11ea-9365-2e7bd3da90dc.png">
  </p>
