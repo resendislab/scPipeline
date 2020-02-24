@@ -1,23 +1,23 @@
-#### Script that computes the p-value for the differentially expresed genes
+#### Script that computes the p-value for the differentially expressed genes
 #### genes analysis. Genes with p-value<0.05 and a fold change>2.0 are saved.
 #### Also, gets overexpressed genes for every cluster given the actual
-#### comparisson.
+#### comparison.
 
 #### Clean memory
 rm(list = ls())
 library(gtools)
 ############## Custom Functions
 Gns.Fil <- function(comb,base,logFC){
-  
-  #### factor determining the clusters comparisson
+ 
+  #### factor determining the clusters comparison
   G1 <- paste("Grp_",comb[1],sep = "")
   G2 <- paste("Grp_",comb[2],sep = "")
-  
+ 
   #### Open saved space from SCDE analysis
   a <- paste("./results/data/Results_",base,
              "(",G1,"vs",G2,").RData",sep="")
   load(a)
-  
+ 
   # 2-tailed p-value
   p.values.adj <- 2*pnorm(abs(ediff$cZ),lower.tail=F) # Adjusted to control for FDR
   ##### Genes with a p-value < 0.05
@@ -37,7 +37,7 @@ Gns.Fil <- function(comb,base,logFC){
              base,"(",G1,"vs",G2,")_",G2,"_genes_(logFC_",
              toString(logFC),").txt",sep="")
   write.table(DwG, file = a, row.names = TRUE, col.names = TRUE, sep = "\t", quote = FALSE)
-  ########### Differentially expresed gene for both comparissons
+  ########### Differentially expressed genes for both comparisons
   DG <- rbind(DwG,UpG)
   a <- paste(path,"/regulated_",
              base,"(",G1,"vs",G2,")_(logFC_",
@@ -48,7 +48,7 @@ Gns.Fil <- function(comb,base,logFC){
 
 #### Number of selected genes
 val <- 6000
-#### Log Fold Change CutOff 
+#### Log Fold Change CutOff
 logFC <- 2
 #### Space used to perform clustering
 fls.name <- c("kmeans_Class_uMAP",
@@ -71,19 +71,19 @@ for (j in 1:(ng*4)){   ###1:12
     id.val <-  1
     fl <- fl + 1}
 
-##### Open classification 
+##### Open classification
   Clust <- read.csv(paste("./data/processed/",fls.name[id.fls],
                           "_",toString(val[id.val]),".csv",sep ="" ),
                     sep = ",")
 #### Cluster number   
   N.clust = max(Clust[,2])
-### Possible combinations of two elemments
+### Possible combinations of two elements
   comb <- combinations(N.clust, 2, LETTERS[1:N.clust],
                        set=TRUE, repeats.allowed=FALSE)
   ### name of root analysis
   base <- paste(fls.name[id.fls],"_",
                 toString(val[id.val]),sep = "")
-#### Main structure to compute the filtering
+#### Main structure to compute filtering
   invisible(lapply(1:choose(N.clust,2), function(x) Gns.Fil(comb[x,],
          base, logFC)))
 }

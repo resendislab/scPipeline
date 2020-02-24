@@ -4,7 +4,7 @@
 
 # Single Cell Pipeline
 
-The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the ointeraction maps accordinfd pathway enrichment. The full pipeline is formed by the following modules:
+The complete pipeline starts with the fastq files and ends with the differentiallly expresed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the complete pipeline as R code, which it is structured by the following modules:
 
 * [Sample Processing](#samples-processing)
   - [Data Availabity](#samples-data-availability)
@@ -29,7 +29,7 @@ A count matrix is generated for every of the 4 lines. All files can be merged in
 ### Data Availabity 
 The data used and discussed have been deposited in NCBI's Gene Expression Omnibus and are accessible through the accession number [GSE145633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145633). 
 
-## knee filter
+## Knee filter
 Since we used droplet based tecnology for the hight throuput sequencing, data must be filtered by taking out droplets with no RNA from the biological samples, so, only informative cells remain. To implement knee filter we ploted the cumulaitve UMI sum   for all cells. The point where the firts inflection point occurs set the threshold.  
 
 <p align="center">
@@ -100,14 +100,18 @@ As a result from gsea analysis, we got the enriched pathways according the expre
  </p>
 
 ## Differential Gene Expresion Analysis
-Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) with biological data.
+Differential gene expression analysis (DGEA) is done by pairs, so, one file is needed per possible comparation of two given the number of clusters (eg. If there are 3 clusters, there 3 possible combinations, AvsB, AvsC and BvsC). DGEA was performed by the **SCDE** R package. Error models were fitted to split drop-out events(technical errors) from biological data.
 
 ### Genetic Signatures
 
-Differentially expresed genes were settled with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01.
+We selected the 
+Differentially expresed genes were selected with a threshold of |Log<sub>2</sub>(Fold Change)| ≥ 4 and p-value ≤ 0.01. So, there is a list of differentially expressed genes for each comparison. To get globally expresed genes for each cluster, we constructed a intersection lists, they contained genes that are overexpresed in all comparasissons related to an especific cluster. For example, a gene **GeneX** either must be overexpresed for Cluster A in AvsB and AvsC comparissons to be selected as global(in the case of 3 clusters). This procces can represented as a re-estructuration of a Venn diagram as shown bellow.
+
 <p align="center">
-  <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082816-1380ca80-54db-11ea-904a-fb97f9afe469.png">
+  <img width=900" height="450" src="https://user-images.githubusercontent.com/60892768/75173471-8ca73a00-56f4-11ea-9a60-4142bcda8bfe.png">
  </p>
+
+Finally, globally differentially expresed genes are visualizated in a expression heatmap. Upper bar represents Clusters. 
 
 <p align="center">
   <img width="450" height="450" src="https://user-images.githubusercontent.com/60892768/75082905-8ab65e80-54db-11ea-9365-2e7bd3da90dc.png">
