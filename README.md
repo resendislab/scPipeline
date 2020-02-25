@@ -6,7 +6,7 @@
 
 ## Attribution
 
-The pipeline was developed by Aarón Vázquez-Jiménez in the [Human Systems Biology Group](https://resendislab.github.io/) at INMEGEN.
+The pipeline was developed by Aarón Vázquez-Jiménez in the [Human Systems Biology Group](https://resendislab.github.io/) at [INMEGEN](https://www.inmegen.gob.mx/).
 
 ## Getting Started
 
