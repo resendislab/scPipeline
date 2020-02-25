@@ -7,7 +7,7 @@
 The full pipeline starts with the fastq files and ends with the differentially expressed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the complete pipeline as R code, which it is structured by the following modules:
 
 * [Sample Processing](#samples-processing)
-  - [Data Availability](#samples-data-availability)
+  - [Data Availability](#data-availability)
 * [Knee filter](#knee-filter)
 * [Gene Over-dispersion](#gene-over-dispersion)
 * [Gene number selection](#gene-number-selection)
