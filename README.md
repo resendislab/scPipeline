@@ -8,7 +8,7 @@
 
 The pipeline was developed by Aarón Vázquez-Jiménez*  in the [Human Systems Biology Group](https://resendislab.github.io/) at [INMEGEN](https://www.inmegen.gob.mx/).
 
-* [info](https://www.linkedin.com/in/aar%C3%B3n-v%C3%A1zquez-jim%C3%A9nez-798473159/)
+*[info](https://www.linkedin.com/in/aar%C3%B3n-v%C3%A1zquez-jim%C3%A9nez-798473159/)
 
 ## Getting Started
 
