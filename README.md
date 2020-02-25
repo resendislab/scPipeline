@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/60892768/74993425-88d39900-5410-11ea-8643-b701551d0472.png">
 </p>
 
-# Single cell RNA-Seq data analysis pipeline
+# Single Cell RNA-Seq Data Analysis Pipeline
 
 ## Attribution
 
