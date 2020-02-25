@@ -1,7 +1,7 @@
 #### Script to select and filter the  percentage 
 #### of valid cells based on the count matrix
 
-Filter.Count.Matrix <- function(smp,b){
+Filter.Count.Matrix <- function(smp){
   pth <- "./data/raw/ddSeeker_Output"
   library(splus2R)
   library(sjmisc)
@@ -46,6 +46,14 @@ Filter.Count.Matrix <- function(smp,b){
   
   FCs <- inflec(Gns,smp,"1")
 }
+
+Filter.Count.Matrix.ALL <- function(smp){
+  Gns <- read.table(paste("./data/raw/Count_Matrix_",
+                          smp,".csv",sep = ""),
+                    header = TRUE, quote = "", row.names = 1, sep = ",")
+  FCs <- inflec(Gns,smp,"1")
+}
+
 
 inflec <- function(Gns,smp,tit){
   Sm <- unlist(lapply(Gns,sum))
