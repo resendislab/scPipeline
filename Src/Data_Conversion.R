@@ -14,12 +14,15 @@ Names_conv <- function(DaTa,lb){
   return(DaTa)
 }
 
+### load raw count matrix if there is one file per sequenced line
+# Data.6B <- Filter.Count.Matrix("6B")
+# Data.19A <-Filter.Count.Matrix("19A")
+# Data.19B <-Filter.Count.Matrix("19B")
 
-### load raw count matrix
-Data.6B <- Filter.Count.Matrix("6B")
-
-Data.19A <-Filter.Count.Matrix("19A")
-Data.19B <-Filter.Count.Matrix("19B")
+### load raw count matrix if there is one file for all lines
+Data.6B <- Filter.Count.Matrix.ALL("6B")
+Data.19A <-Filter.Count.Matrix.ALL("19A")
+Data.19B <-Filter.Count.Matrix.ALL("19B")
 
 ### Data Correction for 19A and 19B samples
 Data.19A <- inflec(Data.19A,"19A","2")
