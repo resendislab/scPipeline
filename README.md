@@ -15,7 +15,7 @@ This pipeline was used to study functionally heterogeneity in the MCF7 cell line
 The [pipeline](Pipeline/pipeline.md) is structured as follows:
 
 * [Sample Processing](Pipeline/pipeline.md#samples-processing)
-  - [Data Availability](Pipeline/pipeline.md#samples-data-availability)
+  - [Data Availability](Pipeline/pipeline.md#data-availability)
 * [Knee filter](Pipeline/pipeline.md#knee-filter)
 * [Gene Over-dispersion](Pipeline/pipeline.md#gene-over-dispersion)
 * [Gene number selection](Pipeline/pipeline.md#gene-number-selection)
