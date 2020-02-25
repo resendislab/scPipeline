@@ -4,7 +4,7 @@
 
 # Single Cell Pipeline
 
-The full pipeline starts with the fastq files and ends with the differentially expressed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the complete pipeline as R code, which it is structured by the following modules:
+The full pipeline starts with the fastq files and ends with the differentially expressed genes and the interaction maps according pathway enrichment. The **Pipeline.R** file contains the pipeline as R code, which it is structured by the following modules:
 
 * [Sample Processing](#samples-processing)
   - [Data Availability](#data-availability)
