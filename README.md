@@ -10,7 +10,7 @@ The pipeline was developed by Aarón Vázquez-Jiménez in the [Human Systems Bio
 
 ## Getting Started
 
-This pipeline was used to study functionally heterogeneity in the MCF7 cell line using Multicellular Tumor Spheroids as tumor model. If you have any questions contact us at avazquezj(at)inmegen.gob.mx and oresendis (at) inmegen.gob.mx.
+This pipeline was used to study functionally heterogeneity in the MCF7 cell line using Multicellular Tumor Spheroids as tumor model. If you have any questions contact us at avazquezj(at)inmegen.gob.mx and oresendis(at)inmegen.gob.mx.
 
 The [pipeline](Pipeline/pipeline.md) is structured by the following steps:
 
