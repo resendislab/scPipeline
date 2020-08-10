@@ -6,7 +6,7 @@
 
 ## Attribution
 
-The pipeline was developed by [Aarón Vázquez-Jiménez](https://www.linkedin.com/in/aar%C3%B3n-v%C3%A1zquez-jim%C3%A9nez-798473159/) and Osbaldo Resendis-Antonio in the [Human Systems Biology Group](https://resendislab.github.io/) at [INMEGEN](https://www.inmegen.gob.mx/). This pipeline was used to study functional heterogeneity that you can [cite](https://www.nature.com/articles/s41598-020-69026-7).
+The pipeline was developed by [Aarón Vázquez-Jiménez](https://www.linkedin.com/in/aar%C3%B3n-v%C3%A1zquez-jim%C3%A9nez-798473159/) in the [Human Systems Biology Group](https://resendislab.github.io/) at [INMEGEN](https://www.inmegen.gob.mx/). This pipeline was used to study functional heterogeneity that you can [cite](https://www.nature.com/articles/s41598-020-69026-7).
 
 ## Getting Started
 
