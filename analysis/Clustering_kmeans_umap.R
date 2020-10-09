@@ -45,7 +45,7 @@ Dis.R <- 1-Var.Corr
   # title(paste("tSNE",toString(ng), sep = " "))
  
 ### uMAP computation
-Data.umap = umap(Dis.R,random_state=1)
+Data.umap = umap(Dis.R,random_state=0)
  
 # uMAP space of data, colored by sample time
 plot(Data.umap$layout, pch=19, col=as.integer(label))
